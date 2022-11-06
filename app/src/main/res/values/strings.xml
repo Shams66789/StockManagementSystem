@@ -6,4 +6,6 @@
     <string name="user">New User?</string>
     <string name="register"><u>Register now</u></string>
     <string name="confirm_passcode">Confirm Passcode</string>
+    <string name="menu">Choose from below options</string>
+    <string name="add">Add new Stocks</string>
 </resources>

@@ -14,10 +14,15 @@
         android:theme="@style/Theme.StockManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".OperationPage"
+            android:exported="false"
+            android:label="Menu"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".NewUser"
             android:exported="false"
             android:label="User Registration"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

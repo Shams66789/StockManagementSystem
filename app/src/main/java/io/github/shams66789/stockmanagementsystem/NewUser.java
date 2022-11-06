@@ -37,11 +37,19 @@ public class NewUser extends AppCompatActivity {
             String passcode2 = editText2.getText().toString();
             if(passcode1.equals(passcode2)) {
                 textView.setText("Passcode Matched!");
-
+                onBackPressed();
             }else{
                 textView.setText("Passcode not matched! Try again");
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        String data = editText1.getText().toString();
+        Intent intent = new Intent();
+        intent.putExtra("Passcode", data);
+        setResult(123, intent);
+        finish();
     }
 }
