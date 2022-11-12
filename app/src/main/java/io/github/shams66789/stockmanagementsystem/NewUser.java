@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NewUser extends AppCompatActivity {
     // Declaring variables
@@ -35,7 +36,9 @@ public class NewUser extends AppCompatActivity {
             String name = editText.getText().toString();
             String passcode1 = editText1.getText().toString();
             String passcode2 = editText2.getText().toString();
-            if(passcode1.equals(passcode2)) {
+            if (passcode1.isEmpty()) {
+                Toast.makeText(this, "Please enter a valid Passcode", Toast.LENGTH_SHORT).show();
+            } else if(passcode1.equals(passcode2)) {
                 textView.setText("Passcode Matched!");
                 onBackPressed();
             }else{
@@ -47,9 +50,11 @@ public class NewUser extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         String data = editText1.getText().toString();
-        Intent intent = new Intent();
-        intent.putExtra("Passcode", data);
-        setResult(123, intent);
+        if (!data.isEmpty()) {
+            Intent intent = new Intent();
+            intent.putExtra("Passcode", data);
+            setResult(123, intent);
+        }
         finish();
     }
 }

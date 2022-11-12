@@ -50,13 +50,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
                 passcode = sp.getString("key",null);
+                String code = editText.getText().toString();
                 if (passcode == null) {
                     textView2.setText("Your account does not exists! Please register first");
                     Toast.makeText(MainActivity.this, "Your account does not exists! Please register first",
                             Toast.LENGTH_SHORT).show();
-                }
-                String code = editText.getText().toString();
-                if (code.equals(passcode)){
+                } else if (code.equals(passcode)){
                     Intent intent = new Intent(MainActivity.this, OperationPage.class);
                     startActivity(intent);
                 }else {
