@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.shams66789.stockmanagementsystem">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -14,10 +13,15 @@
         android:theme="@style/Theme.StockManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".AddStocks"
+            android:exported="false"
+            android:label="Add Stock"
+            android:parentActivityName=".OperationPage"/>
+        <activity
             android:name=".OperationPage"
             android:exported="false"
             android:label="Menu"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".NewUser"
             android:exported="false"
